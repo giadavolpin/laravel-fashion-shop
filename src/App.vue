@@ -1,19 +1,20 @@
 <template>
-  <div>
-    {{ title }}
-  </div>
-</template>
-
-<script>
+	<AppHeader></AppHeader>
+	<main>
+	  <router-view></router-view>
+	</main>
+  </template>
+  
+  <script>
+  import AppHeader from './components/HeaderComponent.vue';
 	export default {
-	name:'App',
-	data(){
-		return {
-			title:'hello'    
-		}
-	}};
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+	  name: 'App',
+	  components:{
+		AppHeader
+	  }
+	  
+	}
+  </script>
+  
+  <style lang="scss" scoped>
+  </style>
