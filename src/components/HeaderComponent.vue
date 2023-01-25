@@ -48,8 +48,8 @@
 <style lang="scss" scoped>
 .navbar {
   padding: 2rem;
-  background-color: #f5f6f7;
-  height: 100px;
+  background-color: #ef0288;
+  height: 50px;
 }
 .navbar-collapse {
   align-items: center;
