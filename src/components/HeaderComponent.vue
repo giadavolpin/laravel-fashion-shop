@@ -47,7 +47,7 @@
 
 <style lang="scss" scoped>
 .navbar {
-  padding: 2rem;
+  padding: 0 2rem;
   background-color: #ef0288;
   height: 50px;
 }

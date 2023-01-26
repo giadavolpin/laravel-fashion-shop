@@ -5,3 +5,9 @@ $fa-font-path: '../webfonts';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 
 @import 'bootstrap/scss/bootstrap';
+
+html {
+    background: url("./../image/bg-body-top.jpg") repeat-x;
+}
+
+// background: url("./../assets/image/bg-body-top.jpg");

@@ -31,7 +31,7 @@ const router = createRouter({
             component: ContactUs
         },
         {
-            path:'/products/:id',
+            path:'/products/:slug',
             name: 'single-Product',
             component: SingleProduct
         },
