@@ -5,12 +5,12 @@
     <div class="gallery pt-2"> </div>
      <div class="d-flex" > 
       <ul class="d-flex justify-content-start flex-wrap justify-content-between p-2 m-3">
-        <li class="m-3"><a href="#"><img src="../assets/img/summer-collection.jpg" alt=""></a></li>
-        <li class="m-3"><a href="#"><img src="../assets/img/beach-bride.jpg" alt=""></a></li>
-        <li class="m-3"><a href="#"><img src="../assets/img/motherhood-apparel.jpg" alt=""></a></li>
-        <li class="m-3"><a href="#"><img src="../assets/img/fashionable.jpg" alt=""></a></li>
-        <li class="m-3"><a href="#"><img src="../assets/img/accessories.jpg" alt=""></a></li>
-        <li class="m-3"><a href="#"><img src="../assets/img/skin-perfect.jpg" alt=""></a></li>
+        <li class="m-3 lens"><a href="#"><img src="../assets/img/summer-collection.jpg" alt=""></a></li>
+        <li class="m-3 lens"><a href="#"><img src="../assets/img/beach-bride.jpg" alt=""></a></li>
+        <li class="m-3 lens"><a href="#"><img src="../assets/img/motherhood-apparel.jpg" alt=""></a></li>
+        <li class="m-3 lens"><a href="#"><img src="../assets/img/fashionable.jpg" alt=""></a></li>
+        <li class="m-3 lens"><a href="#"><img src="../assets/img/accessories.jpg" alt=""></a></li>
+        <li class="m-3 lens"><a href="#"><img src="../assets/img/skin-perfect.jpg" alt=""></a></li>
       </ul>
     </div>
   </div>

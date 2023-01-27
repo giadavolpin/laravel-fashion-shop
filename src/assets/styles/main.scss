@@ -11,6 +11,21 @@ $fa-font-path: "../webfonts";
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+// WEBKIT SCROLLBAR
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #26272b;
+  border-radius: 25px;
+}
+
 html {
   background: url("./../img/bg-body-top.jpg") repeat-x;
 }
