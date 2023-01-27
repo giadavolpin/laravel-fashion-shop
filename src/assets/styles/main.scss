@@ -1,62 +1,67 @@
-@use './partials/variables' as *;
+@use "./partials/variables" as *;
 
-$fa-font-path: '../webfonts';
-@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '@fortawesome/fontawesome-free/scss/solid.scss';
-@import '@fortawesome/fontawesome-free/scss/brands.scss';
-@import '@fortawesome/fontawesome-free/scss/regular.scss';
-@import '@fortawesome/fontawesome-free/scss/solid.scss';
+$fa-font-path: "../webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
 
+@import "bootstrap/scss/bootstrap";
 
-@import 'bootstrap/scss/bootstrap';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 html {
-    background: url("./../img/bg-body-top.jpg") repeat-x;
+  background: url("./../img/bg-body-top.jpg") repeat-x;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 // background: url("./../assets/image/bg-body-top.jpg");
 
 .button {
-    background-color: #fec7d7;
-    border: none;
-    color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 12px
-  }
-  
-  .button-pink {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #fec7d7;
-  }
-  
-  .button-pink:hover {
-    background-color: #fec7d7;
-    color: black;
-  }
-  
-  .button-black {
-    background-color: black;
-    border: none;
-    color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 12px
-  }
-  .button-black:hover {
-    background-color: #fec7d7;
-    color: black;
-  }
+  background-color: #fec7d7;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button-pink {
+  background-color: white;
+  color: black;
+  border: 2px solid #fec7d7;
+}
+
+.button-pink:hover {
+  background-color: #fec7d7;
+  color: black;
+}
+
+.button-black {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.button-black:hover {
+  background-color: #fec7d7;
+  color: black;
+}
