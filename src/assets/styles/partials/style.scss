@@ -40,12 +40,12 @@ p a {
 	margin:0;
 }
 .header div div.navigation ul.first {
-	background:url(src\assets\img\bg-top-navigation-left.png) no-repeat;
+	background:url("src\assets\img\bg-top-navigation-left.png") no-repeat;
 	height:30px;
 	padding:0 0 0 21px;
 }
 .header div div.navigation ul.first li {
-	background:url(src\assets\img\bg-top-navigation.png);
+	background:url("src\assets\img\bg-top-navigation.png");
 }
 .header div div.navigation ul li.first a {
 	border:0;
@@ -63,10 +63,10 @@ p a {
 	background:url(src\assets\img\bg-top-navigation2.png);
 	height:30px;
 }
-.header div div.navigation ul li a:hover, .header div div.navigation ul.first li.selected a, .body .content div.blog div.paging ul li a:hover, .header div div.navigation ul li.selected a {
+.header div div.navigation ul li a:hover, .header div div.navigation ul.first li.selected , .body .content div.blog div.paging ul li a:hover, .header div div.navigation ul li.selected {
 	color:#ef0288;
 }
-.header div div.navigation ul li a {
+.header div div.navigation ul li {
 	text-decoration:none;
 	color:#721c49;
 	font-family:arial;
@@ -162,40 +162,40 @@ p a {
 	margin:0 10px 0 0;
 	
 }
-.body .featured a img {
+.body .featured  img {
 	border:0;
 }
-.body .featured div.gallery {
+.body .featured .gallery {
 	display: flex;
 	justify-content: flex-start;
 	width:790px;
 }
-.body .featured div.gallery a {
+.body .featured {
 	flex:none;
 	margin:0;
 	height:460px;
 }
-.body .featured div.gallery ul.first {
+.body .featured ul.first {
 	margin:10px 0 0;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: flex-wrap;
 }
-.body .featured div.gallery ul {
+.body .featured ul {
 	padding:0;
 	margin:10px 0 0 10px;
 	display: flex;
 	justify-content: flex-start;
 	list-style:none;
 }
-.body .featured div.gallery ul li {
+.body .featured  ul li {
 	width:390px;
 }
-.body .featured div.gallery ul li a {
+.body .featured  ul li  {
 	height:auto;
 	margin: 0 0 10px 0;
 	height:140px;
 }
-.body .featured div.gallery ul li a img:hover {
+.body .featured  ul li img:hover {
 	filter:alpha(opacity=80);
 	opacity:0.8;
 }
@@ -214,10 +214,9 @@ p a {
 	background:none;
 	padding:0;
 }
-.body div.article div.first p a {
-	text-decoration:underline;
+.body div.article div.first p  {
+	text-decoration:none;
 	color:#f6008a;
-	background:none;
 	padding:0;
 	margin:0;
 	display:inline-block;
@@ -250,7 +249,7 @@ p a {
 	font-weight:normal;
 	margin:0;
 }
-.body div.article div a {
+.body div.article div {
 	background:url(../images/icons.gif) no-repeat left 3px;
 	color:#f6008a;
 	text-decoration:none;
@@ -270,7 +269,7 @@ p a {
 	font-size:20px;
 	margin:15px 0 21px;
 }
-.body div.article div.connect a {
+.body div.article div.connect {
 	text-indent:-99999px;
 	display: flex;
 	justify-content: flex-start;
@@ -306,9 +305,6 @@ p a {
 	margin:0 10px 0 0;
 	background:url(../images/bg-content.png);
 }
-.body .sidebar div.first {
-	background:none;
-}
 .body .sidebar div {
 	width:138px;
 	font-family:arial;
@@ -321,20 +317,20 @@ p a {
 	font-weight:bold;
 	font-size:15px;
 }
-.body .sidebar div h2 a {
+.body .sidebar div h2  {
 	text-decoration:none;
 	color:#f6008a;
 	font-weight:normal;
 	font-size:16px;
 }
-.body .sidebar div ul li a {
+.body .sidebar div ul li  {
 	color:#92898a;
 	text-decoration:none;
 }
-.body .sidebar div ul li.selected a {
+.body .sidebar div ul li.selected  {
 	color:#F6008A;
 }
-.body .sidebar div ul li a:hover {
+.body .sidebar div ul li {
 	color:#f6008a;
 }
 .body .sidebar div ul {
@@ -366,7 +362,7 @@ p a {
 .body .content .products div.paging div.first {
 	height:20px;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-around;
 }
 .body .content .products div.paging div.first h2 {
 	background:url(../images/interface.gif) no-repeat left -50px #ff0090;
@@ -386,7 +382,7 @@ p a {
 	font-size:12px;
 	font-weight:normal;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-around;
 	line-height:20px;
 	margin:0 5px 0 0;
 	height:auto;
@@ -399,7 +395,7 @@ p a {
 	margin:0!important;
 	padding:0;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-around;
 	width:auto;
 }
 .body .content .products div.paging div.first ul li {
@@ -415,7 +411,7 @@ p a {
 .body .content .products div.paging div.first ul li.selected {
 	border:0;
 }
-.body .content .products div.paging div.first ul li a {
+.body .content .products div.paging div.first ul li {
 	color:#948b8c;
 	font-family:arial;
 	font-size:13px;
@@ -428,7 +424,7 @@ p a {
 	height:auto;
 	padding:0;
 }
-.body .content .products div.paging div.first ul li.selected a, .body .content .products div.paging div.first ul li a:hover, .body .content .products div.paging div ul li a:hover {
+.body .content .products div.paging div.first ul li.selected , .body .content .products div.paging div.first ul li a:hover, .body .content .products div.paging div ul li a:hover {
 	color:#ff0090;
 }
 .body .content .products div.paging div {
@@ -459,10 +455,10 @@ p a {
 	width:18px;
 	border:1px solid #ff0090;
 }
-.body .content .products div.paging ul li.selected a {
+.body .content .products div.paging ul li.selected  {
 	color:#ff0090;
 }
-.body .content .products div.paging ul li a {
+.body .content .products div.paging ul li  {
 	color:#a3a3a3;
 	font-family:arial;
 	font-size:13px;
@@ -475,7 +471,7 @@ p a {
 	padding:0;
 	border:0;
 }
-.body .content .products div.paging a {
+.body .content .products div.paging  {
 	height:18px;
 	width:auto;
 	border:1px solid #ff0090;
@@ -503,10 +499,10 @@ p a {
 	justify-content: flex-start;
 	margin:0 0 0 34px;
 }
-.body .content .products ul li a img {
+.body .content .products ul li  img {
 	border:0;
 }
-.body .content .products ul li a img:hover {
+.body .content .products ul li  img:hover {
 	filter:alpha(opacity=80);
 	opacity:0.8;
 }
@@ -534,7 +530,7 @@ p a {
 }
 .body .sidebar div ul.archives li {
 }
-.body .sidebar div ul.archives li a {
+.body .sidebar div ul.archives li  {
 	color:#f6008a;
 	font-weight:normal;
 }
@@ -543,12 +539,12 @@ p a {
 }
 .body .sidebar div ul.archives li ul {
 }
-.body .sidebar div ul.archives li ul li a {
+.body .sidebar div ul.archives li ul li  {
 	color:#86577B;
 	font-size:12px;
 	font-weight:normal;
 }
-.body .sidebar div ul.archives li ul li a:hover {
+.body .sidebar div ul.archives li ul li {
 	color:#f6008a;
 }
 .body .sidebar div ul.archives li ul li span {
@@ -654,7 +650,7 @@ p a {
 	overflow:hidden;
 	width:auto;
 }
-.body .content div.blog div.paging a {
+.body .content div.blog div.paging {
 	margin:0;
 	background:url(../images/interface.gif) no-repeat left -50px #ff0090;
 	font-family:Arial;
@@ -696,10 +692,10 @@ p a {
 	width:18px;
 	border:1px solid #ff0090;
 }
-.body .content div.blog div.paging ul li.selected a {
+.body .content div.blog div.paging ul li.selected  {
 	color:#ff0090;
 }
-.body .content div.blog div.paging ul li a {
+.body .content div.blog div.paging ul li {
 	color:#a3a3a3;
 	font-family:arial;
 	font-size:13px;
@@ -713,7 +709,7 @@ p a {
 	background:none;
 	border:0;
 }
-.body .content div.blog div.paging div a {
+.body .content div.blog div.paging div {
 	border: 1px solid #FF0090;
 	color: #FF0090;
 	display: flex;
@@ -760,7 +756,7 @@ p a {
 	color:#89776B;
 	font-size:13px;
 }
-.body .content div.about p a, .body .content div.news p a {
+.body .content div.about p a, .body .content div.news p {
 	color:#f6008a;
 }
 /*-------------------------	Footer --------------------------*/
