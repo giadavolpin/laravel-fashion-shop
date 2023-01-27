@@ -1,5 +1,6 @@
 <template>
-    <section class="container pt-3 d-flex justify-content-center" v-if="product">
+<div id="single">
+    <section class="container pt-3 d-flex justify-content-center" v-if="product" >
         <div class="card mb-3" style="max-width: 1000px;">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -12,7 +13,6 @@
                         <div v-if="product.brand">
                             <p>Brand: {{ product.brand.name }}</p>
                         </div>
-
                         <div v-else="product.brand">
                             <p>Nessun brand</p>
                         </div>
@@ -20,7 +20,6 @@
                         <div v-if="product.category">
                             <p>Category: {{ product.category.name }}</p>
                         </div>
-
                         <div v-else="product.category">
                             <p>Nessun category</p>
                         </div>
@@ -29,7 +28,15 @@
                             <p>Texture: {{ product.texture.name }}</p>
                         </div>
                         <div v-else="product.texture">
-                            <p>Nessun textur</p>
+                            <p>Nessun texture</p>
+                        </div>
+
+                        <div v-if="product.tangs && product.tangs.length > 0">
+                            <div>
+                                <span v-for="(tang, index) in product.tangs" :key="index" class="badge text-bg-info">
+                                    {{ tang.name }}
+                                </span>
+                            </div>
                         </div>
 
                         <button type="button" class="button-black ">Acquista</button>
@@ -41,8 +48,10 @@
             </div>
         </div>
     </section>
-
-    <section v-else>Loading</section>
+    <section v-else>
+        Loading
+    </section>
+</div>
 </template>
 
 <script>
@@ -79,5 +88,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#single{
+    height: 62vh;
+}
 
 </style>

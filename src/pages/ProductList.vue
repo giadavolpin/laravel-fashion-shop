@@ -117,12 +117,10 @@ import { store } from "../store";
 }
 
 .card-image {      
-    width: 100%;
+width:100%;
   height: 500px;
   object-fit: cover;
-//   object-position: top;
-// object-fit: none;
-object-fit: scale-down;
+
 object-position: 50% 50%;
 }
 
