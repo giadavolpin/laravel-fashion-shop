@@ -1,9 +1,9 @@
 <template>
     <header>
         <nav class="navbar navbar-expand-md navbar-light">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="navbar-collapse" id="navbar-toggler">
-                    <a class="navbar-brand" href="#"><i class="fa-solid fa-code fa-xl fa-flip" style="--fa-animation-duration: 3s;"></i></a>
+                    <a class="navbar-brand" href="#"><img src="./../assets/image/logo.png" alt=""></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         <li class="nav-item" v-for="(link, index) in menuLinks" :key="index">
                             <router-link :to="{ name: link.routeName }" active-class="my-active" class="nav-link ">
@@ -85,7 +85,7 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/styles/partials/style.scss' as *;
 .navbar {
-  padding: 2rem;
+  padding: 0 2rem;
   background-color: #ef0288;
   height: 50px;
   z-index: 1000;
