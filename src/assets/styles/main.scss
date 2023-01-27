@@ -11,7 +11,7 @@ $fa-font-path: '../webfonts';
 @import 'bootstrap/scss/bootstrap';
 
 html {
-    background: url("./../image/bg-body-top.jpg") repeat-x;
+    background: url("./../img/bg-body-top.jpg") repeat-x;
 }
 
 // background: url("./../assets/image/bg-body-top.jpg");
@@ -38,6 +38,25 @@ html {
   }
   
   .button-pink:hover {
+    background-color: #fec7d7;
+    color: black;
+  }
+  
+  .button-black {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px
+  }
+  .button-black:hover {
     background-color: #fec7d7;
     color: black;
   }

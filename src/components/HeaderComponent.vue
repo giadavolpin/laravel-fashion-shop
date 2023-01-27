@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
                 <div class="navbar-collapse" id="navbar-toggler">
-                    <a class="navbar-brand" href="#"><img src="./../assets/image/logo.png" alt=""></a>
+                    <a class="navbar-brand" href="#"><img src="./../assets/img/logo.png" alt=""></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         <li class="nav-item" v-for="(link, index) in menuLinks" :key="index">
                             <router-link :to="{ name: link.routeName }" active-class="my-active" class="nav-link ">
