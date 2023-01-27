@@ -3,6 +3,10 @@
 $fa-font-path: '../webfonts';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+
 
 @import 'bootstrap/scss/bootstrap';
 
@@ -11,3 +15,29 @@ html {
 }
 
 // background: url("./../assets/image/bg-body-top.jpg");
+
+.button {
+    background-color: #fec7d7;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px
+  }
+  
+  .button-pink {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #fec7d7;
+  }
+  
+  .button-pink:hover {
+    background-color: #fec7d7;
+    color: black;
+  }

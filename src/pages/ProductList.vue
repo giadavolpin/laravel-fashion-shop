@@ -1,72 +1,52 @@
 <template>
-        <div class="my-body">
-            <div class="sidebar">
-                <div class="first">
-                    <h2><a href="#">Categories</a></h2>
-                    <ul>
-                        <li><a href="#">Tees / T-Shirts</a></li>
-                        <li><a href="#">Casual Tops</a></li>
-                        <li><a href="#">Dresses</a></li>
-                        <li><a href="#">Knits</a></li>
-                        <li><a href="#">Pants</a></li>
-                        <li><a href="#">Skirts</a></li>
-                        <li><a href="#">Shorts</a></li>
-                        <li><a href="#">Sets</a></li>
-                        <li><a href="#">Swimwear</a></li>
-                        <li><a href="#">Hoddies</a></li>
-                        <li><a href="#">Sweaters</a></li>
-                        <li><a href="#">Outerwear</a></li>
-                        <li><a href="#">Belts</a></li>
-                        <li><a href="#">Hosiery</a></li>
-                        <li><a href="#">Innerwear</a></li>
-                        <li><a href="#">Plus-size</a></li>
-                        <li><a href="#">Maternity</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2><a href="#">Brands</a></h2>
-                </div>
-                <div>
-                    <h2><a href="#">Textures</a></h2>
-                </div>
+    <section id="prodotti" class="container-fluid pt-5 pb-5">
+        <section class="container">
+            <div class="col-12 text-center">
+                <p class="display-5 fw-semibold">Esplora i nostri prodotti</p>
+                <p class="fs-5 fw-semibold text-secondary">Viso, occhi, labbra, mani. Tutto ciò che serve per un make up che esalti la tua bellezza.</p>
             </div>
-            <div class="content">
-                <div class="figure"> <img src="./../assets/image/apparel.jpg" alt=""> </div>
-                <div class="d-flex justify-content-end">
-                    <nav aria-label="..." class="pt-3" id="">
-                        <ul class="pagination">
-                            <li class="page-item" :class="{'disabled': currentPage === 1}">
-                                <button class="page-link" :disabled="currentPage === 1"
-                                    @click="getProducts(currentPage - 1)">Previous</button>
-                            </li>
-                            <li class="page-item" v-for="n in lastPage">
-                                <button class="page-link" @click="getProducts(n)">{{n}}</button>
-                            </li>
-                            <li class="page-item" :class="{'disabled': currentPage === lastPage}">
-                                <button class="page-link" :disabled="currentPage === lastPage"
-                                    @click="getProducts(currentPage + 1)">Next</button>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="products">
-                    <ul>
-                        <li v-for="(product, index) in products" :key="index"> 
-                            <a href="#">
-                            <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name">
-                            <!-- <img src="./../assets/image/apparel1.jpg" alt=""> -->
-                            </a>
-                            <h4>{{ product.name }}</h4>
-                            <p>{{ truncateDescription(product.description) }}</p>
-                            <span>Altro</span>
-                            <!-- <router-link class="btn btn-primary" :to="{name: 'single-product', params:{ slug: product.slug }}">
-                                Vedi il product
-                            </router-link> -->
+            <div class="d-flex justify-content-end">
+                <nav aria-label="..." class="pt-3" id="">
+                    <ul class="pagination">
+                        <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
+                            <button class="page-link" :disabled="currentPage === 1"
+                                @click="getProducts(currentPage - 1)">Previous</button>
+                        </li>
+                        <li class="page-item" v-for="n in lastPage">
+                            <button class="page-link" @click="getProducts(n)">{{ n }}</button>
+                        </li>
+                        <li class="page-item" :class="{ 'disabled': currentPage === lastPage }">
+                            <button class="page-link" :disabled="currentPage === lastPage"
+                                @click="getProducts(currentPage + 1)">Next</button>
                         </li>
                     </ul>
-                </div>
+                </nav>
             </div>
-        </div>
+        </section>
+        
+        <ul class="cards">
+            <li v-for="(product, index) in products" :key="index">
+                <a href="" class="card">
+                    <div>
+                        <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name" class="card-image" />
+                    </div>
+                    <div class="card-overlay">
+                        <div class="card_header">
+                                <h3 class="card-title">{{ product.name }}</h3>
+                        </div>
+                        <p class="card-description">{{ truncateDescription(product.description) }}</p>
+                        <div class="card-description">
+                            <router-link class="button button-pink"
+                                :to="{ name: 'single-product', params: { id: product.id } }">
+                                Vedi il product
+                            </router-link>
+                        </div>
+        
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </section>
 </template>
 
 <script>
@@ -84,7 +64,7 @@ import { store } from "../store";
             return{
                 store,
                 products: [],
-                contentMaxLen: 100,
+                contentMaxLen: 80,
                 currentPage: 1,
                 lastPage: null,
                 total: 0,
@@ -114,117 +94,77 @@ import { store } from "../store";
 </script>
 
 <style lang="scss" scoped>
-.my-body {
-    width: 960px;
-    margin: 20px auto;
-    height: auto;
-    position: relative;
-    
-    .sidebar {
-        float: left;
-        margin: 0 10px 0 0;
-        background: url("./../assets/image/bg-content.png");
-        // background: url("./../assets/image/bg-body-top.jpg");
-
-        div.first {
-            background: none;
-        }
-    }
+* {
+  box-sizing: border-box;
 }
 
-.my-body .sidebar div h2 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 15px;
-    text-decoration: none;
-
-    a {
-        text-decoration: none;
-        color: #f6008a;
-        font-weight: normal;
-        font-size: 16px;
-    }
-}
-
-.my-body .sidebar div ul {
-    margin: 0 0 60px;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 10px 5vw;
     padding: 0;
-    list-style: none;
-
-    li {
-        margin: 5px 0 0 0;
-
-        a {
-            color: grey;
-            text-decoration: none;
-        }
-    }
+    list-style-type: none;
 }
 
-.my-body .sidebar div {
-    width: 138px;
-    font-family: arial;
-    font-size: 14px;
-    padding: 15px 11px;
-    background: url("./../assets/image/border-top.gif") no-repeat center top;
-    
-
-    h2 {
-        margin: 0;
-        font-weight: bold;
-        font-size: 15px;
-    }
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(40 * 1px);
+  overflow: hidden;
+  text-decoration: none;
 }
 
-// Content dei products
-.my-body .content {
-    float: left;
-    
+.card-image {      
+    width: 100%;
+  height: 500px;
+  object-fit: cover;
+//   object-position: top;
+// object-fit: none;
+object-fit: scale-down;
+object-position: 50% 50%;
+}
 
-    .figure {
-        height: 260px;
-    }
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;  
+  background-color: #fff;      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
 
-    .products {
-        margin: 0 0 24px;
+.card:hover .card-overlay {
+  transform: translateY(0);
+}
 
-        img{
-            height: 140px;
-        }
-
-        ul {
-            padding: 0;
-            list-style: none;
-            overflow: hidden;
-
-            li {
-                width: 170px;
-                float: left;
-                margin-left: 10px;
-                margin-right: 10px;
-
-                h4 {
-                    margin: 5px 0 0;
-                    text-transform: uppercase;
-                    color: #f6008a;
-                    font-family: arial;
-                    font-size: 14px;
-                    font-weight: normal;
-                }
-
-                p {
-                    margin: 0;
-                    color: #b2a7ab;
-                    font-family: arial;
-                    font-size: 13px;
-                }
-
-                span {
-                    font-family: arial;
-                    font-size: 14px;
-                }
-            }
-        }
-    }
+.card_header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;   
+  background-color: #fff;
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+.card:hover .card_header {
+  transform: translateY(0);
+}
+.card-title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+.card-description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: black;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 </style>

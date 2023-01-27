@@ -1,7 +1,21 @@
 <template>
-    <section class="container pt-3" v-if="product">
-        <h1>{{ product.name }}</h1>
-        <h4>{{ product.description }}</h4>
+    <section class="container pt-3 d-flex justify-content-center" v-if="product">
+        <div class="card mb-3" style="max-width: 1000px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}.</p>
+                        <router-link class="button button-pink" :to="{name: 'products'}">
+                            Torna all lista
+                        </router-link>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section v-else>Loading</section>
@@ -22,10 +36,10 @@ export default {
     methods: {
         getProduct() {
             console.log(this.$route);
-            axios.get(`${this.store.apiBaseUrl}/products/${this.$route.params.slug}`).then((response) => {
+            axios.get(`${this.store.apiBaseUrl}/products/${this.$route.params.id}`).then((response) => {
                 console.log(response.data.results);
                 if (response.data.success) {
-                    //console.log(response.data.results);
+                    console.log(response.data.results);
                     this.product = response.data.results;
                 } else {
                     //console.log(this.$router);
