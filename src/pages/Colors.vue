@@ -1,12 +1,15 @@
 <template>
-
+    <div>
+        Colors
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'AboutUs'
+        name: 'Colors'
     }
 </script>
 
 <style lang="scss" scoped>
+
 </style>

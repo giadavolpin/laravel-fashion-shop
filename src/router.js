@@ -6,6 +6,9 @@ import AboutUs from './pages/AboutUs.vue';
 import SingleProduct from './pages/SingleProduct.vue';
 import ContactUs from './pages/ContactUs.vue';
 import NotFound from './pages/NotFound.vue';
+import Brands from './pages/Brands.vue';
+import Colors from './pages/Colors.vue';
+import Tags from './pages/Tags.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,6 +32,21 @@ const router = createRouter({
             path: '/contact',
             name: 'contact',
             component: ContactUs
+        },
+        {
+            path: '/brands',
+            name: 'brands',
+            component: Brands 
+        },
+        {
+            path: '/colors',
+            name: 'colors',
+            component: Colors 
+        },
+        {
+            path: '/tags',
+            name: 'tags',
+            component: Tags
         },
         {
             path:'/products/:id',

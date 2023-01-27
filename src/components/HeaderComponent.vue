@@ -6,11 +6,15 @@
                     <a class="navbar-brand" href="#"><i class="fa-solid fa-code fa-xl fa-flip" style="--fa-animation-duration: 3s;"></i></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         <li class="nav-item" v-for="(link, index) in menuLinks" :key="index">
-                            <router-link :to="{ name: link.routeName }" active-class="my-active" class="nav-link">
+                            <router-link :to="{ name: link.routeName }" active-class="my-active" class="nav-link ">
                                 {{ link.label }}
                             </router-link>
                         </li>
                     </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                         <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -18,11 +22,14 @@
 </template>
 
 <script>
-    export default {
-        name: 'AppHeader',
+import axios from 'axios';
+import { store } from '../store';
+
+export default {
+    name: 'HeaderComponent',
     data() {
         return {
-            menuLinks: [
+        menuLinks: [
                 {
                     label: "Home",
                     routeName: "home",
@@ -32,27 +39,63 @@
                     routeName: "products",
                 },
                 {
-                    label: "About",
-                    routeName: "about",
-                },
-                {
                     label: "Contacts",
                     routeName: "contact",
+                }, 
+                {
+                    label: "Brands",
+                    routeName: "brands",
                 },
-            ],
-        };
+                {
+                    label: "Colors",
+                    routeName: "colors",
+                },
+                {
+                    label: "Tags",
+                    routeName: "tags",
+                },
+            ], 
+ 
+            store,
+            product: null,
+        }
     },
-    }
+    methods: {
+        getProduct() {
+            console.log(this.$route);
+            axios.get(`${this.store.apiBaseUrl}/products/${this.$route.params.id}`).then((response) => {
+                console.log(response.data.results);
+                if (response.data.success) {
+                    //console.log(response.data.results);
+                    this.product = response.data.results;
+                } else {
+                    //console.log(this.$router);
+                    this.$router.push({ name: 'not-found' });
+                }
+            });
+        }
+    },
+    mounted() {
+        this.getProduct();
+    },
+}
+       
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/style.scss' as *;
 .navbar {
   padding: 2rem;
   background-color: #ef0288;
   height: 50px;
+  z-index: 1000;
 }
 .navbar-collapse {
   align-items: center;
   justify-content: space-between;  
 }
+.nav-link{
+    color: white;
+}
+
 </style>

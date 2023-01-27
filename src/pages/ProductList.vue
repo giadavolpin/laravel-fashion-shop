@@ -26,7 +26,7 @@
                     <button class="page-link" :disabled="currentPage === lastPage" @click="getProducts(currentPage + 1)">Next</button>
                 </li>
             </ul>
-        </nav>
+        </nav> 
     </section>
 </template>
 

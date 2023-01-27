@@ -1,12 +1,15 @@
 <template>
-
+    <div>
+        ciao
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'AboutUs'
+     name: 'Brands'   
     }
 </script>
 
 <style lang="scss" scoped>
+
 </style>

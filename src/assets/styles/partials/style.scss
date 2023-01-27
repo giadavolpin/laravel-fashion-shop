@@ -10,6 +10,7 @@ p a {
 	text-decoration:underline;
 	color: #8B8B8B;
 }
+
 /*-------------------------	Header --------------------------*/
 .header {
 	width:auto;
@@ -22,28 +23,29 @@ p a {
 	position:relative;
 }
 .header div a#logo {
-	display:block;
+	display:flex;
 	height:110px;
 	width:254px;
-	float:left;
+	justify-content:flex-start;
 }
 .header div a#logo img {
 	border:0;
 }
 .header div div.navigation {
-	float:right;
+	display: flex;
+	justify-content: flex-end;
 	overflow:hidden;
 	height:30px;
 	width:auto;
 	margin:0;
 }
 .header div div.navigation ul.first {
-	background:url(../images/bg-top-navigation-left.png) no-repeat;
+	background:url(src\assets\img\bg-top-navigation-left.png) no-repeat;
 	height:30px;
 	padding:0 0 0 21px;
 }
 .header div div.navigation ul.first li {
-	background:url(../images/bg-top-navigation.png);
+	background:url(src\assets\img\bg-top-navigation.png);
 }
 .header div div.navigation ul li.first a {
 	border:0;
@@ -52,11 +54,13 @@ p a {
 	list-style:none;
 	padding:0;
 	margin:0;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 }
 .header div div.navigation ul li {
-	float:left;
-	background:url(../images/bg-top-navigation2.png);
+	display: flex;
+	justify-content: flex-start;
+	background:url(src\assets\img\bg-top-navigation2.png);
 	height:30px;
 }
 .header div div.navigation ul li a:hover, .header div div.navigation ul.first li.selected a, .body .content div.blog div.paging ul li a:hover, .header div div.navigation ul li.selected a {
@@ -82,17 +86,18 @@ p a {
 	bottom:10px;
 }
 .header div form.search input {
-	background: url(../images/interface.gif) no-repeat 0 -90px;
+	background: url(src\assets\img\interface.gif) no-repeat 0 -90px;
 	width:324px;
 	height:auto;
 	border:0;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	padding:11px 0 11px 40px;
 	color:#a1a1a1;
 	font-size:15px;
 }
 .header div form.search input#submit {
-	background:url(../images/interface.gif) no-repeat 0 -150px;
+	background:url(src\assets\img\interface.gif) no-repeat 0 -150px;
 	width:auto;
 	height:24px;
 	position:relative;
@@ -102,7 +107,7 @@ p a {
 }
 .header div#navigation {
 	height:40px;
-	background:url(../images/bg-navigation.gif) repeat-x;
+	background:url(src\assets\img\bg-top-navigation.png) repeat-x;
 	width:auto;
 }
 .header div#navigation ul {
@@ -113,7 +118,8 @@ p a {
 	overflow:hidden;
 }
 .header div#navigation ul li {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:131px;
 	text-align:center;
 }
@@ -123,7 +129,7 @@ p a {
 	text-shadow:none;
 }
 .header div#navigation ul li.selected {
-	background:url(../images/bg-menu-selected.gif) no-repeat center top;
+	background:url(src\assets\img\bg-menu-selected.gif) no-repeat center top;
 	width:134px;
 }
 .header div#navigation ul li a {
@@ -151,30 +157,34 @@ p a {
 	overflow:hidden;
 }
 .body .featured a {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 10px 0 0;
-	display:block;
+	
 }
 .body .featured a img {
 	border:0;
 }
 .body .featured div.gallery {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:790px;
 }
 .body .featured div.gallery a {
-	float:none;
+	flex:none;
 	margin:0;
 	height:460px;
 }
 .body .featured div.gallery ul.first {
 	margin:10px 0 0;
-	float:left!important;
+	display: flex;
+	justify-content: flex-start;
 }
 .body .featured div.gallery ul {
 	padding:0;
 	margin:10px 0 0 10px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	list-style:none;
 }
 .body .featured div.gallery ul li {
@@ -213,7 +223,8 @@ p a {
 	display:inline-block;
 }
 .body div.article div {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:325px;
 	background:url(../images/separator-dotted.gif) no-repeat center bottom;
 	padding: 0 0 21px 0;
@@ -246,7 +257,7 @@ p a {
 	padding:0 0 0 20px;
 	font-size:13px;
 	margin:0 0 0 20px;
-	display:block;
+	display:flex;
 }
 .body div.article div.connect {
 	margin:0;
@@ -261,8 +272,8 @@ p a {
 }
 .body div.article div.connect a {
 	text-indent:-99999px;
-	display:block;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	padding:0;
 }
 .body div.article div.connect a#facebook {
@@ -290,7 +301,8 @@ p a {
 	margin:0 0 0 35px;
 }
 .body .sidebar {
-	float: left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 10px 0 0;
 	background:url(../images/bg-content.png);
 }
@@ -337,7 +349,8 @@ p a {
 	margin:5px 0 0 0;
 }
 .body .content {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 }
 .body .content .figure {
 	height:260px;
@@ -352,7 +365,8 @@ p a {
 }
 .body .content .products div.paging div.first {
 	height:20px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 }
 .body .content .products div.paging div.first h2 {
 	background:url(../images/interface.gif) no-repeat left -50px #ff0090;
@@ -362,7 +376,8 @@ p a {
 	color:#fff;
 	padding:0 13px 0 20px;
 	line-height: 20px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	font-weight:normal;
 }
 .body .content .products div.paging div.first span {
@@ -370,7 +385,8 @@ p a {
 	font-family:arial;
 	font-size:12px;
 	font-weight:normal;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	line-height:20px;
 	margin:0 5px 0 0;
 	height:auto;
@@ -382,7 +398,8 @@ p a {
 	list-style:none;
 	margin:0!important;
 	padding:0;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:auto;
 }
 .body .content .products div.paging div.first ul li {
@@ -390,7 +407,8 @@ p a {
 	width:20px;
 	height:20px;
 	text-align:center;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 2px 0 0;
 	border:0;
 }
@@ -406,7 +424,7 @@ p a {
 	display:block;
 	text-decoration:none;
 	border:0;
-	float:none;
+	flex:none;
 	height:auto;
 	padding:0;
 }
@@ -414,19 +432,22 @@ p a {
 	color:#ff0090;
 }
 .body .content .products div.paging div {
-	float:right;
+	display: flex;
+	justify-content: flex-end;
 }
 .body .content .products div.paging div ul {
 	margin:0;
 	list-style:none;
 	padding:0;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:auto;
 	height:auto;
 	color:#a3a3a3;
 }
 .body .content .products div.paging ul li {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 2px 0 0;
 	width:20px;
 	text-align:center;
@@ -449,7 +470,7 @@ p a {
 	text-decoration:none;
 	display:block;
 	font-weight:normal;
-	float:none;
+	flex:none;
 	height:auto;
 	padding:0;
 	border:0;
@@ -462,7 +483,8 @@ p a {
 	font-size:14px;
 	padding:0 10px;
 	color:#ff0090;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	font-weight:normal;
 	text-decoration:none;
 }
@@ -477,7 +499,8 @@ p a {
 }
 .body .content .products ul li {
 	width:170px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 0 0 34px;
 }
 .body .content .products ul li a img {
@@ -551,7 +574,8 @@ p a {
 	background:url(../images/interface.gif) no-repeat left 0;
 	height:30px;
 	margin:10px 0 0;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:87px;
 	text-indent:14px;
 }
@@ -563,7 +587,8 @@ p a {
 }
 .body .content div.blog div div.stats div.share {
 	background:url(../images/separator-blog.gif) repeat-x left 25px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:75px;
 	height:40px;
 	padding:0 0 0 505px;
@@ -574,7 +599,8 @@ p a {
 	width:20px;
 	display:block;
 	text-indent:99999px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 5px 0 0;
 }
 .body .content div.blog div div.stats div.share a#heart {
@@ -583,7 +609,8 @@ p a {
 	width:20px;
 	display:block;
 	text-indent:99999px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 5px 0 0;
 }
 .body .content div.blog div div.stats div.share a#likes {
@@ -592,7 +619,8 @@ p a {
 	width:20px;
 	display:block;
 	text-indent:99999px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 5px 0 0;
 }
 .body .content div.blog div div {
@@ -634,25 +662,29 @@ p a {
 	color:#fff;
 	padding:0 13px 0 20px;
 	line-height: 20px;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	font-weight:normal;
 	text-decoration:none;
 }
 .body .content div.blog div.paging div {
-	float:right;
+	display: flex;
+	justify-content: flex-end;
 	width:auto;
 }
 .body .content div.blog div.paging div ul {
 	margin:0;
 	list-style:none;
 	padding:0;
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	width:auto;
 	height:auto;
 	color:#a3a3a3;
 }
 .body .content div.blog div.paging ul li {
-	float:left;
+	display: flex;
+	justify-content: flex-start;
 	margin:0 2px 0 0;
 	width:20px;
 	text-align:center;
@@ -675,7 +707,7 @@ p a {
 	text-decoration:none;
 	display:block;
 	font-weight:normal;
-	float:none;
+	flex:none;
 	height:auto;
 	padding:0;
 	background:none;
@@ -684,7 +716,8 @@ p a {
 .body .content div.blog div.paging div a {
 	border: 1px solid #FF0090;
 	color: #FF0090;
-	float: left;
+	display: flex;
+	justify-content: flex-start;
 	font-family: arial;
 	font-size: 14px;
 	font-weight: normal;
