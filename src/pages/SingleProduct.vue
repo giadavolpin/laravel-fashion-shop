@@ -9,6 +9,30 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">{{ product.description }}.</p>
+                        <div v-if="product.brand">
+                            <p>Brand: {{ product.brand.name }}</p>
+                        </div>
+
+                        <div v-else="product.brand">
+                            <p>Nessun brand</p>
+                        </div>
+
+                        <div v-if="product.category">
+                            <p>Category: {{ product.category.name }}</p>
+                        </div>
+
+                        <div v-else="product.category">
+                            <p>Nessun category</p>
+                        </div>
+
+                        <div v-if="product.texture">
+                            <p>Texture: {{ product.texture.name }}</p>
+                        </div>
+                        <div v-else="product.texture">
+                            <p>Nessun textur</p>
+                        </div>
+
+                        <button type="button" class="button-black ">Acquista</button>
                         <router-link class="button button-pink" :to="{name: 'products'}">
                             Torna all lista
                         </router-link>
