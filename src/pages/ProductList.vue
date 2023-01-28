@@ -10,14 +10,14 @@
                     <ul class="pagination">
                         <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
                             <button class="page-link" :disabled="currentPage === 1"
-                                @click="getProducts(currentPage - 1)">Previous</button>
+                                @click="getProducts(currentPage - 1)"><i class="fa-solid fa-arrow-left"></i></button>
                         </li>
                         <li class="page-item" v-for="n in lastPage">
                             <button class="page-link" @click="getProducts(n)">{{ n }}</button>
                         </li>
                         <li class="page-item" :class="{ 'disabled': currentPage === lastPage }">
                             <button class="page-link" :disabled="currentPage === lastPage"
-                                @click="getProducts(currentPage + 1)">Next</button>
+                                @click="getProducts(currentPage + 1)"><i class="fa-solid fa-arrow-right"></i></button>
                         </li>
                     </ul>
                 </nav>
@@ -26,7 +26,7 @@
         
         <ul class="cards">
             <li v-for="(product, index) in products" :key="index">
-                <a href="" class="card">
+                <article class="card">
                     <div>
                         <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name" class="card-image" />
                     </div>
@@ -43,7 +43,7 @@
                         </div>
         
                     </div>
-                </a>
+                </article>
             </li>
         </ul>
     </section>
@@ -155,7 +155,7 @@ object-position: 50% 50%;
 .card-title {
   font-size: 1em;
   margin: 0 0 .3em;
-  color: #6A515E;
+  color: #ef0288;
 }
 .card-description {
   padding: 0 2em 2em;

@@ -5,9 +5,9 @@
                 <div class="navbar-collapse" id="navbar-toggler">
                     <a class="navbar-brand" href="#"><img src="./../assets/img/logo.png" alt=""></a>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
-                        <li class="nav-item" v-for="(link, index) in menuLinks" :key="index">
-                            <router-link :to="{ name: link.routeName }" active-class="my-active" class="nav-link ">
-                                {{ link.label }}
+                        <li class="nav-item" v-for="(item, index) in menuLinks" :key="index">
+                            <router-link :to="{ name: item.routeName }" active-class="my-active" class="nav-link ">
+                                {{ item.label }}
                             </router-link>
                         </li>
                     </ul>
@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-import { store } from '../store';
 
 export default {
     name: 'HeaderComponent',
@@ -50,33 +48,12 @@ export default {
                     label: "Colors",
                     routeName: "colors",
                 },
-                {
-                    label: "Tags",
-                    routeName: "tags",
-                },
+                // {
+                //     label: "Tags",
+                //     routeName: "tags",
+                // },
             ], 
- 
-            store,
-            product: null,
-        }
-    },
-    methods: {
-        getProduct() {
-            console.log(this.$route);
-            axios.get(`${this.store.apiBaseUrl}/products/${this.$route.params.id}`).then((response) => {
-                console.log(response.data.results);
-                if (response.data.success) {
-                    //console.log(response.data.results);
-                    this.product = response.data.results;
-                } else {
-                    //console.log(this.$router);
-                    this.$router.push({ name: 'not-found' });
-                }
-            });
-        }
-    },
-    mounted() {
-        this.getProduct();
+        };
     },
 }
        

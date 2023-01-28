@@ -88,8 +88,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#single{
-    height: 62vh;
-}
+
 
 </style>

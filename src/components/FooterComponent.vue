@@ -76,8 +76,8 @@
     font-size: 15px;
     line-height: 24px;
     color: #737373;
-
-    // position: fixed;
+    
+    min-height: 300px;
     bottom: 0px;
     left: 0px;
     right: 0px;
