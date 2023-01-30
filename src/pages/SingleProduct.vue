@@ -11,32 +11,24 @@
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p class="card-text">{{ product.description }}.</p>
                         <div v-if="product.brand">
-                            <p>Brand: {{ product.brand.name }}</p>
+                            <p class="text-capitalize"><span class="fw-semibold">Brand :</span> {{ product.brand.name }}.</p>
                         </div>
                         <div v-else="product.brand">
                             <p>Nessun brand</p>
                         </div>
 
                         <div v-if="product.category">
-                            <p>Category: {{ product.category.name }}</p>
+                            <p class="text-capitalize"><span class="fw-semibold">Category :</span> {{ product.category.name }}.</p>
                         </div>
                         <div v-else="product.category">
-                            <p>Nessun category</p>
+                            <p class="fw-semibold">Nessun category</p>
                         </div>
 
                         <div v-if="product.texture">
-                            <p>Texture: {{ product.texture.name }}</p>
+                            <p class="text-capitalize"><span class="fw-semibold">Texture :</span> {{ product.texture.name }}.</p>
                         </div>
                         <div v-else="product.texture">
-                            <p>Nessun texture</p>
-                        </div>
-
-                        <div v-if="product.tangs && product.tangs.length > 0">
-                            <div>
-                                <span v-for="(tang, index) in product.tangs" :key="index" class="badge text-bg-info">
-                                    {{ tang.name }}
-                                </span>
-                            </div>
+                            <p class="fw-semibold">Nessun texture</p>
                         </div>
 
                         <button type="button" class="button-black ">Acquista</button>
