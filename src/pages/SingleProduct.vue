@@ -48,7 +48,7 @@
         </div>
     </section>
     <section v-else>
-        Loading
+        <AppLoading></AppLoading>
     </section>
 </div>
 </template>
@@ -56,6 +56,7 @@
 <script>
 import axios from 'axios';
 import { store } from '../store';
+import AppLoading from '../components/LoadingCommponent.vue';
 
 export default {
     name: 'SingleProduct',
@@ -65,6 +66,10 @@ export default {
             product: null,
         }
     },
+    components: {
+        AppLoading,
+    },
+
     methods: {
         getProduct() {
             console.log(this.$route);

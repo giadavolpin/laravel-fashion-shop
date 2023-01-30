@@ -19,24 +19,22 @@
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide v-for="(product) in products " >  <div class="card-front card-block d-flex flex-column ">
-     
+    <swiper-slide v-for="(product) in products ">
+      <div class="card-front card-block d-flex flex-column ">
         <div>
-          <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name" class="card-image" />
+          <router-link :to="{ name: 'single-product', params: { id: product.id } }">
+            <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name" class="card-image" />
+          </router-link>
         </div>
-       <div>
-        <strong class="centro"> {{ product.name }} </strong>
-       </div>
-       <div>
-        <strong class="centro"> {{ product.price }} €</strong>
-       </div>
-       
-      
-    
-  
-             
-            </div></swiper-slide>
-  </swiper> 
+        <div>
+          <strong class="centro"> {{ product.name }} </strong>
+        </div>
+        <div>
+          <strong class="centro"> {{ product.price }} €</strong>
+        </div>
+      </div>
+    </swiper-slide>
+    </swiper>
     </div>
     
           
@@ -47,7 +45,7 @@
 <!-- </div> -->
 </template>
 
-  <script>
+<script>
 
  import axios from "axios";
 import { store } from "../store";
@@ -112,7 +110,7 @@ import { Pagination, Navigation } from "swiper";
     }
   </script>
 
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
 @use '../assets/styles/partials/style.scss' as *;
 
 
