@@ -39,9 +39,9 @@
                             </div>
                         </div>
 
-                        <button type="button" class="button-black btn btn-success me-3">Acquista</button>
+                        <button type="button" class="btn btn-success me-3">Acquista</button>
                         <router-link class="btn btn-dark" :to="{name: 'products'}">
-                            Torna all lista
+                            Torna alla lista
                         </router-link>
                     </div>
                 </div>
