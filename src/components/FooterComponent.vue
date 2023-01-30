@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h6>Chi siamo</h6>
-                    <p class="text-justify">BEAUTIFILE è creatività, design, tendenza, bellezza Made in Italy. Il rosa è
+                    <p class="text-justify">BEAUTIFLIE è creatività, design, tendenza, bellezza Made in Italy. Il rosa è
                         il colore che
                         identifica il suo spirito: il rosa è un segno di speranza, il dinamismo e la vitalità, come
                         l'energia per ideare nuove forme
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
-                        <a href="#">Beautifile</a>.
+                        <a href="#">Beautiflie</a>.
                     </p>
                 </div>
 
