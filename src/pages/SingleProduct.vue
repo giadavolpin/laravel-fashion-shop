@@ -31,8 +31,15 @@
                             <p class="fw-semibold">Nessun texture</p>
                         </div>
 
-                        <button type="button" class="btn btn-success me-3">Acquista</button>
-                        <router-link class="btn btn-dark" :to="{name: 'products'}">
+                        <div v-if="product.price">
+                            <p class="text-capitalize"><span class="fw-semibold">Price :</span> {{ product.price }} €</p>
+                        </div>
+                        <div v-else="product.price">
+                            <p class="fw-semibold">Nessun prezzo</p>
+                        </div>
+
+                        <button type="button" class="button button-pink me-3">Acquista</button>
+                        <router-link class="button-black" :to="{name: 'products'}">
                             Torna alla lista
                         </router-link>
                     </div>

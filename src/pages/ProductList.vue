@@ -155,7 +155,7 @@ import { store } from "../store";
 
 .card-image {
 	width: 100%;
-	height: 500px;
+	height: 400px;
 	object-fit: cover;
 	object-position: 50% 50%;
 }
