@@ -9,9 +9,7 @@ $fa-font-path: "../webfonts";
 
 @import "bootstrap/scss/bootstrap";
 
-
- 
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 // WEBKIT SCROLLBAR
@@ -78,4 +76,10 @@ body {
 .button-black:hover {
   background-color: #fec7d7;
   color: black;
+}
+
+.jumbo {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
 }

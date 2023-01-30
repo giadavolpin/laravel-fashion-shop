@@ -130,14 +130,14 @@ img{
 
 
 
-
-
-
-  .jumbo{
+.jumbo{
     height: 400px;
     width: 100%;
     object-fit: cover;
   }
+
+
+  
   h2{
     font-family: 'Itim', cursive;
     // font-family: 'Montserrat', sans-serif;

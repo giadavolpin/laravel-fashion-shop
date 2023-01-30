@@ -1,6 +1,6 @@
 <template>
-    <section id="jumbotron" class="container">
-    </section>
+   <img class="jumbo" src="../assets/img/pexels-anderson-guerra-1115128.jpg" alt="">
+
     <section class="container">
         <div class="row">
             <div class="col-12">
