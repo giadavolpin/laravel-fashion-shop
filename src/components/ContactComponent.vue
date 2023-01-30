@@ -1,5 +1,5 @@
 <template>
-    <section class="contact_me py-5">
+    <section class="contact_me py-5" id="form">
         <div class="inner-wrapper">
             <div class="container-fluid ">
                 <h2 class="text-uppercase text-center">servizio clienti</h2>
@@ -12,16 +12,16 @@
                 </div>
                 <div class="row">
                     <form class="col-12 text-start" @submit.prevent="sendForm()">
-                        <div class="mb-3">
-                            <input class="border-0 border-bottom form-control" type="text" name="name" id="name"
+                        <div class="input">
+                            <input class="" type="text" name="name" id="name"
                                 placeholder="NOME" v-model="name" :class="{ 'is-invalid': errors.name }" required>
                             <p v-for="(error, index) in errors.name" :key="index" class="invalid-feedback">
                                 {{ error }}
                             </p>
                         </div>
 
-                        <div class="mb-3">
-                            <input class="border-0 border-bottom form-control" type="text" name="email" id="email"
+                        <div class="input">
+                            <input class="" type="text" name="email" id="email"
                                 placeholder="E-MAIL" v-model="email" :class="{ 'is-invalid': errors.email }" required>
                             <p v-for="(error, index) in errors.email" :key="index" class="invalid-feedback">
                                 {{ error }}
@@ -29,8 +29,8 @@
 
                         </div>
 
-                        <div class="mb-3">
-                            <textarea class="border-0 border-bottom form-control" name="message" id="message" cols="30"
+                        <div class="input">
+                            <textarea class="" name="message" id="message" cols="30"
                                 rows="5" placeholder="IL TUO MESSAGGIO" v-model="message"
                                 :class="{ 'is-invalid': errors.message }" required></textarea>
                             <p v-for="(error, index) in errors.message" :key="index" class="invalid-feedback">
@@ -91,5 +91,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#form {
+    max-width: 100%;
 
+    .input {
+        max-width: 100%;
+
+        input,
+        textarea {
+            border-radius: 10px;
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            line-height: 16px;
+            border: 2px solid #fec7d7;
+        }
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+    }
+    .input:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    
+}
 </style>

@@ -153,12 +153,11 @@ import { store } from "../store";
   text-decoration: none;
 }
 
-.card-image {      
-width:100%;
-  height: 500px;
-  object-fit: cover;
-
-object-position: 50% 50%;
+.card-image {
+	width: 100%;
+	height: 500px;
+	object-fit: cover;
+	object-position: 50% 50%;
 }
 
 .card-overlay {
