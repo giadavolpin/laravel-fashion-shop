@@ -2,7 +2,7 @@
     <section id="prodotti" class="container pt-5 pb-5">
         <section class="container">
             <div class="col-12 text-center">
-                <p class="display-5 fw-semibold">Esplora i nostri prodotti</p>
+                <p class="display-5 fw-semibold esplora">Esplora i nostri prodotti</p>
                 <p class="fs-5 fw-semibold text-secondary">Viso, occhi, labbra, mani. Tutto ciò che serve per un make up che esalti la tua bellezza.</p>
             </div>
             <div class="d-flex justify-content-end">
@@ -200,5 +200,8 @@ import { store } from "../store";
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+.esplora{
+    font-family: 'Itim', cursive;
 }
 </style>

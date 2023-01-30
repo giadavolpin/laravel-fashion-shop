@@ -1,6 +1,6 @@
 <template>
 <div id="single">
-    <section class="container pt-3 d-flex justify-content-center" v-if="product" >
+    <section class="container pt-5 d-flex justify-content-center" v-if="product" >
         <div class="card mb-3" style="max-width: 1000px;">
             <div class="row g-0">
                 <div class="col-md-4">

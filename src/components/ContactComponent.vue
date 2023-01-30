@@ -2,7 +2,7 @@
     <section class="contact_me py-5" id="form">
         <div class="inner-wrapper">
             <div class="container-fluid ">
-                <h2 class="text-uppercase text-center">servizio clienti</h2>
+                <h2 class="text-uppercase text-center clienti">servizio clienti</h2>
                 <p class="py-2">Hai una domanda o un dubbio?
                     Compila semplicemente il modulo sottostante e fai clic su Invia. Risponderemo a tutte le richieste il prima
                     possibile.
@@ -116,5 +116,8 @@ export default {
         margin-bottom: 10px;
     }
     
+}
+.clienti{
+    font-family: 'Itim', cursive;
 }
 </style>
