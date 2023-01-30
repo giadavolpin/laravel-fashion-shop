@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <h2 class="fw-semibold">{{ product.name }}</h2>
                         <p class="card-text">{{ product.description }}.</p>
                         <div v-if="product.brand">
                             <p class="text-capitalize"><span class="fw-semibold">Brand :</span> {{ product.brand.name }}.</p>

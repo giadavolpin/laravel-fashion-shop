@@ -1,5 +1,5 @@
 <template>
-    <section id="prodotti" class="container-fluid pt-5 pb-5">
+    <section id="prodotti" class="container pt-5 pb-5">
         <section class="container">
             <div class="col-12 text-center">
                 <p class="display-5 fw-semibold">Esplora i nostri prodotti</p>
@@ -45,7 +45,7 @@
                         </div>
                         <p class="card-description">{{ truncateDescription(product.description) }}</p>
                         <div class="card-description">
-                            <router-link class="btn btn-primary"
+                            <router-link class="button button-pink"
                                 :to="{ name: 'single-product', params: { id: product.id } }">
                                 Vedi il prodotto
                             </router-link>
@@ -137,9 +137,9 @@ import { store } from "../store";
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     gap: 2rem;
-    margin: 10px 5vw;
+    margin: 10px 0;
     padding: 0;
     list-style-type: none;
 }
