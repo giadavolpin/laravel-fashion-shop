@@ -6,7 +6,7 @@
                     <h1>BEAUTIFLIE</h1>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
                         <li class="nav-item "  v-for="(item, index) in menuLinks" :key="index">
-                            <router-link :to="{ name: item.routeName }" active-class="" class="nav-link ">
+                            <router-link :to="{ name: item.routeName }" active-class="my-active" class="my-nav ">
                                 {{ item.label }}
                             </router-link>
                         </li>
@@ -72,10 +72,10 @@ background-color: black;
   align-items: center;
   justify-content: space-between;  
 }
-.nav-link{
+.my-nav{
     color: white;
 }
-.nav-link:hover{
+.my-nav:hover{
     color: pink;
 }
 h1{
@@ -105,4 +105,17 @@ input{
  
 }
 
+.my-nav{
+    display: block;
+    padding: 0 0.8rem;
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color
+
+}
+
+.my-active{
+    color: pink;
+}
 </style>
