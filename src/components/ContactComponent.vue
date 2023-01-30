@@ -38,7 +38,7 @@
                             </p>
                         </div>
 
-                        <button class="button button-pink" type="submit" :disabled="loading">
+                        <button class="btn btn-success" type="submit" :disabled="loading">
                             {{loading?'Inviando...': 'Invia'}}
                         </button>
                     </form>

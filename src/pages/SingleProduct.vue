@@ -31,8 +31,8 @@
                             <p class="fw-semibold">Nessun texture</p>
                         </div>
 
-                        <button type="button" class="button-black ">Acquista</button>
-                        <router-link class="button button-pink" :to="{name: 'products'}">
+                        <button type="button" class="button-black btn btn-success me-3">Acquista</button>
+                        <router-link class="btn btn-dark" :to="{name: 'products'}">
                             Torna all lista
                         </router-link>
                     </div>
