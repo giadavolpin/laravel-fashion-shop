@@ -1,51 +1,213 @@
 <template>
 
-<div class="body">
-  <div class=""> 
-    <div class="gallery pt-2"> </div>
-     <div class="d-flex" > 
-      <ul class="d-flex justify-content-start flex-wrap justify-content-between p-2 m-3">
-        <li class="m-3 lens"><a href="#"><img src="../assets/img/summer-collection.jpg" alt=""></a></li>
-        <li class="m-3 lens"><a href="#"><img src="../assets/img/beach-bride.jpg" alt=""></a></li>
-        <li class="m-3 lens"><a href="#"><img src="../assets/img/motherhood-apparel.jpg" alt=""></a></li>
-        <li class="m-3 lens"><a href="#"><img src="../assets/img/fashionable.jpg" alt=""></a></li>
-        <li class="m-3 lens"><a href="#"><img src="../assets/img/accessories.jpg" alt=""></a></li>
-        <li class="m-3 lens"><a href="#"><img src="../assets/img/skin-perfect.jpg" alt=""></a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="">
-    <div class="first">
-      <h2>Please Read</h2>
-      <p>This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text.</p>
-      <p>You can remove any link to our website from this website template, you're free to use this website template without linking back to us.</p>
-      <p>If you're having problems editing this website template, then don't hesitate to ask for help on the Forum.</p>
-      <p>Before using a template from Free Website Templates, you must read all the for further information terms of Use</p>
-    </div>
-    <div class="pb-3">
-      <h2>Sed Elementum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum nibh eget justo dapibus eu porttitor purus hendrerit.</p> 
-    </div>
+<div class="">
+  <img class="jumbo" src="../assets/img/pexels-anderson-guerra-1115128.jpg" alt="">
+  <div class="d-flex justify-content-center">
+      <h2 class="pt-4 pb-4">Scopri i nostri Prodotti!</h2>
     </div>   
-</div>
+    <div class="container pb-5">
+      <swiper
+    :slidesPerView="3"
+    :spaceBetween="30"
+    :slidesPerGroup="3"
+    :loop="true"
+    :loopFillGroupWithBlank="true"
+    :pagination="{
+      clickable: true,
+    }"
+    :navigation="true"
+    :modules="modules"
+    class="mySwiper"
+  >
+    <swiper-slide v-for="(product) in products " >  <div class="card-front card-block d-flex flex-column ">
+     
+        <div>
+          <img :src="`${store.imageUrl}${product.image_link}`" :alt="product.name" class="card-image" />
+        </div>
+       <div>
+        <strong class="centro"> {{ product.name }} </strong>
+       </div>
+       <div>
+        <strong class="centro"> {{ product.price }} €</strong>
+       </div>
+       
+      
+    
+  
+             
+            </div></swiper-slide>
+  </swiper> 
+    </div>
+    
+          
+    <!-- <button class="pre-btn"><img src="../assets/img/arrow.png" alt=""></button>
+        <button class="nxt-btn"><img src="../assets/img/arrow.png" alt=""></button> -->
+      </div>
+       
+<!-- </div> -->
 </template>
 
   <script>
-  export default {
-    name: "HomePage",
-  };
+
+ import axios from "axios";
+import { store } from "../store";
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+
+
+// import required modules
+import { Pagination, Navigation } from "swiper";
+
+    export default {
+        name: 'HomePage',
+        props: ['product'],
+        components: {
+          Swiper,
+    SwiperSlide,
+        },
+        setup(){
+          return{
+            modules:[Pagination, Navigation],
+          }
+        },
+        data(){
+            return{
+                store,
+                products: [],
+                contentMaxLen: 80,
+                currentPage: 1,
+                lastPage: null,
+                total: 0,
+            }
+        },
+        methods:{
+            getProducts(pagenum){
+                axios.get(`${this.store.apiBaseUrl}/products`,{params: { page: pagenum}}).then((response) => {
+                    console.log(response.data.results);
+                    this.products = response.data.results.data;
+                    this.currentPage = response.data.results.current_page;
+                    this.lastPage = response.data.results.last_page;
+                    this.total = response.data.results.total;
+                });
+            },
+            truncateDescription(text) {
+            if (text.length > this.contentMaxLen) {
+                return text.substr(0, this.contentMaxLen) + '...';
+            }
+            return text;
+        },
+        slider(){
+          
+           }
+        },
+        mounted() {
+            this.getProducts(1);
+        },
+    }
   </script>
 
   <style lang="scss" scoped>
 @use '../assets/styles/partials/style.scss' as *;
 
+
+
+
 ul li {
   list-style: none ;
 }
-.gallery{
-  height: 470px;
-  background-image: url("../assets/img/aurora.jpg"); 
-  background-repeat: no-repeat;
-  background-size: 1000px 562px ;
+
+
+
+img{
+  max-width: 100%;
 }
+
+
+
+
+
+
+  .jumbo{
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  h2{
+    font-family: 'Itim', cursive;
+    // font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    color: black;
+    margin-top: 20px;
+  }
+
+
+
+
+
+
+  img{
+    width: 50%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+// swiper-slide {
+//   text-align: center;
+//   font-size: 18px;
+//   background: #fff;
+
+//   /* Center slide text vertically */
+//   display: -webkit-box;
+//   display: -ms-flexbox;
+//   display: -webkit-flex;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   -webkit-justify-content: center;
+//   justify-content: center;
+//   -webkit-box-align: center;
+//   -ms-flex-align: center;
+//   -webkit-align-items: center;
+//   align-items: center;
+// }
+
+
+
+.card-front{
+text-align: center;
+height: 350px;
+// position: absolute;
+width: 100%;
+backface-visibility: hidden;
+}
+
+
 </style>

@@ -71,7 +71,7 @@
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 .my-footer {
-    background-color: #26272b;
+    background-color: black;
     padding: 45px 0 20px;
     font-size: 15px;
     line-height: 24px;
@@ -84,7 +84,7 @@
     margin-bottom: 0px;
 }
 .my-footer hr {
-    border-top-color: #ef0288;
+    border-top-color: pink;
     opacity: 0.5;
 }
 .my-footer hr.small {
@@ -101,7 +101,7 @@
     color: #737373;
 }
 .my-footer a:hover {
-    color: #ef0288;
+    color: pink;
     text-decoration: none;
 }
 .footer-links {
@@ -118,7 +118,7 @@
 .footer-links a:active,
 .footer-links a:focus,
 .footer-links a:hover {
-    color: #ef0288;
+    color: pink;
     text-decoration: none;
 }
 
@@ -129,7 +129,7 @@
     margin: 0;
 
     a {
-        color: #ef0288;;
+        color: pink;;
         text-decoration: none;
     }
 

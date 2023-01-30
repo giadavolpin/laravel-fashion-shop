@@ -9,6 +9,9 @@ $fa-font-path: "../webfonts";
 
 @import "bootstrap/scss/bootstrap";
 
+
+ 
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 // WEBKIT SCROLLBAR
@@ -32,51 +35,4 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-// background: url("./../assets/image/bg-body-top.jpg");
-
-.button {
-  background-color: #fec7d7;
-  border: none;
-  color: white;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 12px;
-}
-
-.button-pink {
-  background-color: white;
-  color: black;
-  border: 2px solid #fec7d7;
-}
-
-.button-pink:hover {
-  background-color: #fec7d7;
-  color: black;
-}
-
-.button-black {
-  background-color: black;
-  border: none;
-  color: white;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 12px;
-}
-.button-black:hover {
-  background-color: #fec7d7;
-  color: black;
 }
