@@ -45,9 +45,9 @@
                         </div>
                         <p class="card-description">{{ truncateDescription(product.description) }}</p>
                         <div class="card-description">
-                            <router-link class="button button-pink"
+                            <router-link class="btn btn-primary"
                                 :to="{ name: 'single-product', params: { id: product.id } }">
-                                Vedi il product
+                                Vedi il prodotto
                             </router-link>
                         </div>
         
