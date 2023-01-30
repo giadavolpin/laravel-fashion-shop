@@ -45,7 +45,7 @@
                         </div>
                         <p class="card-description">{{ truncateDescription(product.description) }}</p>
                         <div class="card-description">
-                            <router-link class="btn btn-primary"
+                            <router-link class="button button-pink"
                                 :to="{ name: 'single-product', params: { id: product.id } }">
                                 Vedi il prodotto
                             </router-link>
@@ -137,7 +137,7 @@ import { store } from "../store";
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     gap: 2rem;
     margin: 10px 5vw;
     padding: 0;
