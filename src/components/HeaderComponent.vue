@@ -1,20 +1,23 @@
 <template>
     <header>
         <nav class="navbar navbar-expand-md navbar-light">
-            <div class="container">
+            <div class="container dist">
                 <div class="navbar-collapse" id="navbar-toggler">
-                    <a class="navbar-brand" href="#"><img src="./../assets/img/logo.png" alt=""></a>
+                    <h1>BEAUTIFLIE</h1>
                     <ul class="navbar-nav d-flex justify-content-center align-items-center">
-                        <li class="nav-item" v-for="(item, index) in menuLinks" :key="index">
-                            <router-link :to="{ name: item.routeName }" active-class="my-active" class="nav-link ">
+                        <li class="nav-item "  v-for="(item, index) in menuLinks" :key="index">
+                            <router-link :to="{ name: item.routeName }" active-class="" class="nav-link ">
                                 {{ item.label }}
                             </router-link>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                         <button class="btn btn-outline-light" type="submit">Search</button>
-                    </form>
+                    <div class="cerca">
+                      
+                            <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search">
+                           
+                       
+                    </div>
+                    
                 </div>
             </div>
         </nav>
@@ -33,21 +36,18 @@ export default {
                     routeName: "home",
                 },
                 {
-                    label: "Products",
+                    label: "Prodotti",
                     routeName: "products",
                 },
                 {
-                    label: "Contacts",
+                    label: "Contattaci",
                     routeName: "contact",
                 }, 
-                {
-                    label: "Brands",
-                    routeName: "brands",
-                },
-                {
-                    label: "Colors",
-                    routeName: "colors",
-                },
+                // {
+                //     label: "Brands",
+                //     routeName: "brands",
+                // },
+               
                 // {
                 //     label: "Tags",
                 //     routeName: "tags",
@@ -63,8 +63,9 @@ export default {
 @use '../assets/styles/partials/style.scss' as *;
 .navbar {
   padding: 0 2rem;
-  background-color: #ef0288;
-  height: 50px;
+//   background-color: #ef0288;
+background-color: black;
+ 
   z-index: 1000;
 }
 .navbar-collapse {
@@ -73,6 +74,35 @@ export default {
 }
 .nav-link{
     color: white;
+}
+.nav-link:hover{
+    color: pink;
+}
+h1{
+    font-family: 'Itim', cursive;
+    color:pink;
+}
+.dist{
+  padding: 7px 0;
+}
+li{
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+}
+
+.cerca{
+    height: 40px;
+    // background-color: #f2f2f2;
+    // border:1px solid #bdbdbd;
+    border-radius: 100% ;
+  
+ 
+}
+input{
+    height: 100%;
+    border:1px solid black;
+    border-radius: 40px;
+ 
 }
 
 </style>

@@ -23,8 +23,17 @@
                 </nav>
             </div>
         </section>
-        
-        <ul class="cards">
+
+        <section>
+            <div class="form-check" v-for="(category, index) in categories">
+                <input type="checkbox" class="form-check-input" :value="index" :id="'category'+index" v-model="selected.categories">
+                <label for="" class="form-check-label" :for="'category'+index">
+                {{ category.name }}
+                </label>
+            </div>
+        </section>
+        <section>
+             <ul class="cards">
             <li v-for="(product, index) in products" :key="index">
                 <article class="card">
                     <div>
@@ -46,6 +55,8 @@
                 </article>
             </li>
         </ul>
+        </section>
+       
     </section>
 </template>
 
@@ -64,15 +75,27 @@ import { store } from "../store";
             return{
                 store,
                 products: [],
+                categories:[],
+                brands:[],
+                textures:[],
                 contentMaxLen: 80,
                 currentPage: 1,
                 lastPage: null,
                 total: 0,
+                categoryFilter: '',
+                isHidden: true,
             }
         },
         methods:{
             getProducts(pagenum){
-                axios.get(`${this.store.apiBaseUrl}/products`,{params: { page: pagenum}}).then((response) => {
+                const data = {params: {
+                    page: pagenum,
+                    // typeFilter: this.typeFilter,
+                    categoryFilter: this.categoryFilter,
+                    // brandFilter: this.brandFilter
+                }
+            }
+                axios.get(`${this.store.apiBaseUrl}/products`,data).then((response) => {
                     console.log(response.data.results);
                     this.products = response.data.results.data;
                     this.currentPage = response.data.results.current_page;
@@ -80,17 +103,31 @@ import { store } from "../store";
                     this.total = response.data.results.total;
                 });
             },
+            // getProperties() {
+            // axios.get(`${this.store.apiUrl}/properties`).then((response) => {
+            //     console.log(response.data.results);
+            //     // this.types = response.data.types;
+            //     this.categories = response.data.categories;
+            //     // this.brands = response.data.brands;
+            // });
             truncateDescription(text) {
             if (text.length > this.contentMaxLen) {
                 return text.substr(0, this.contentMaxLen) + '...';
             }
             return text;
-        }
         },
+        },
+          
+       
         mounted() {
             this.getProducts(1);
-        },
+            // this.getProperties();
+            // axios.get(`${this.store.apiBaseUrl}/categories`).then((response) =>(this.categories=response.data)).catch((error)=>{
+            //     console.log(error);
+            // });
+        }
     }
+
 </script>
 
 <style lang="scss" scoped>
